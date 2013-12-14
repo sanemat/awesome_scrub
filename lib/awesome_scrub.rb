@@ -1,4 +1,4 @@
-require "awesome_scrub/version"
+require 'awesome_scrub/version'
 
 module AwesomeScrub
   def self.included(base)
