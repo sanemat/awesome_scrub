@@ -9,6 +9,6 @@ module AwesomeScrub
   end
 
   def awesome_scrub(args)
-    puts 'awesome-awesome-awesome'
+    args.respond_to?(:scrub) ? args.scrub : args
   end
 end
