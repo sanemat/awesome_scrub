@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = AwesomeScrub::VERSION
   spec.authors       = ['sanemat']
   spec.email         = ['o.gata.ken@gmail.com']
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ''
+  spec.summary       = %q{Wrap String#scrub.}
+  spec.description   = %q{Support String#scrub preventing Invalid byte sequence in UTF-8.}
+  spec.homepage      = 'https://github.com/sanemat/awesome_scrub'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
