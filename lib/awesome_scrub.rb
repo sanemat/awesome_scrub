@@ -1,5 +1,14 @@
-require "awesome_scrub/version"
+require 'awesome_scrub/version'
 
 module AwesomeScrub
-  # Your code goes here...
+  def self.included(base)
+    base.extend(ClassMethods)
+  end
+
+  module ClassMethods
+  end
+
+  def awesome_scrub(args)
+    args.respond_to?(:scrub) ? args.scrub : args
+  end
 end
