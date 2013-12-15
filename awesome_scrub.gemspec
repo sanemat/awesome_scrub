@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'minitest'
+  spec.add_development_dependency 'minitest', '> 4'
   # NOTE: Recommend, but if you implement `#scrub` yourself, no problem.
   #spec.add_dependency 'string-scrub' if RUBY_VERSION < '2.1'
 end
