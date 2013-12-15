@@ -8,6 +8,8 @@ module AwesomeScrub
   module ClassMethods
   end
 
+  extend self
+
   def awesome_scrub(args)
     args.respond_to?(:scrub) ? args.scrub : args
   end
