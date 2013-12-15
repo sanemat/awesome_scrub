@@ -2,6 +2,10 @@
 
 Wrap `String#scrub`.
 
+[![Gem Version](https://badge.fury.io/rb/awesome_scrub.png)](http://badge.fury.io/rb/awesome_scrub)
+[![Build Status](https://api.travis-ci.org/sanemat/awesome_scrub.png?branch=master)](https://travis-ci.org/sanemat/awesome_scrub)
+[![Code Climate](https://codeclimate.com/github/sanemat/awesome_scrub.png)](https://codeclimate.com/github/sanemat/awesome_scrub)
+
 ## Installation
 
 Add this line to your application's Gemfile:
