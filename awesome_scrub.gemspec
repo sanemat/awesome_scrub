@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = AwesomeScrub::VERSION
   spec.authors       = ['sanemat']
   spec.email         = ['o.gata.ken@gmail.com']
-  spec.summary       = %q{Wrap String#scrub.}
-  spec.description   = %q{Support String#scrub preventing Invalid byte sequence in UTF-8.}
+  spec.summary       = %q{Easy to use String#scrub.}
+  spec.description   = %q{Wrap String#scrub preventing Invalid byte sequence in UTF-8.}
   spec.homepage      = 'https://github.com/sanemat/awesome_scrub'
   spec.license       = 'MIT'
 
