@@ -1,6 +1,7 @@
 # AwesomeScrub
 
-Wrap `String#scrub`.
+Easy to use `String#scrub`. Prevent Invalid byte sequence in UTF-8.
+Wrap `params[:name].respond_to?(:scrub) ? params[:name].scrub : params[:name]` to `params[:name].awesome_scrub`
 
 [![Gem Version](https://badge.fury.io/rb/awesome_scrub.png)](http://badge.fury.io/rb/awesome_scrub)
 [![Build Status](https://api.travis-ci.org/sanemat/awesome_scrub.png?branch=master)](https://travis-ci.org/sanemat/awesome_scrub)
@@ -19,10 +20,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install awesome_scrub
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Contributing
 
