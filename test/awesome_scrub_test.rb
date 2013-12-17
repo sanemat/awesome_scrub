@@ -16,7 +16,7 @@ module AwesomeScrub
       @instance_with_modules = TestClassWithInstanceAwesomeScrubs.new
     end
 
-    def test_awesome_scrub
+    def test_normal_string
       [@instance_with_modules, TestClassWithClassAwesomeScrubs, AwesomeScrub].each do |awesome_scrub|
         assert_equal('foo', awesome_scrub.awesome_scrub('foo'))
       end
