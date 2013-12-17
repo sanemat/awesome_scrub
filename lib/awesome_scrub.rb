@@ -13,4 +13,8 @@ module AwesomeScrub
   def awesome_scrub(args)
     args.respond_to?(:scrub) ? args.scrub : args
   end
+
+  def awesome_scrub!(args)
+    args.respond_to?(:scrub!) ? args.scrub! : args
+  end
 end
