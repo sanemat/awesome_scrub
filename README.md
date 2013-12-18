@@ -1,7 +1,7 @@
 # AwesomeScrub
 
 Easy to use `String#scrub`. Prevent Invalid byte sequence in UTF-8.
-Wrap `params[:name].respond_to?(:scrub) ? params[:name].scrub : params[:name]` to `params[:name].awesome_scrub`
+Wrap `params[:name].respond_to?(:scrub) ? params[:name].scrub : params[:name]` to `params[:name].awesome_scrub`.
 
 [![Gem Version](https://badge.fury.io/rb/awesome_scrub.png)](http://badge.fury.io/rb/awesome_scrub)
 [![Build Status](https://api.travis-ci.org/sanemat/awesome_scrub.png?branch=master)](https://travis-ci.org/sanemat/awesome_scrub)
@@ -23,7 +23,7 @@ Wrap `params[:name].respond_to?(:scrub) ? params[:name].scrub : params[:name]` t
 
 Almost time this is no problem, but params[:name] include `invalid byte sequence in UTF-8`, like `invalid_byte_sequence.presence` (`invalid_byte_sequence.present?`) raises `ArgumentError: invalid byte sequence in UTF-8`.
 
-This problem's solution is `String#scrub`(Feature of Ruby2.1, and string-scrub gem for Ruby2.0 backport), this replaces invalid characters. [Feature #6752: Replacing ill-formed subsequencce - ruby-trunk - Ruby Issue Tracking System](http://bugs.ruby-lang.org/issues/6752)
+This problem's solution is `String#scrub`(Feature of Ruby2.1, and `string-scrub` gem which backport for Ruby2.0), this replaces invalid characters. [Feature #6752: Replacing ill-formed subsequencce - ruby-trunk - Ruby Issue Tracking System](http://bugs.ruby-lang.org/issues/6752)
 
 This stil has problem for writing code, `params[:name]` is `String` or `nil`, and some case `Array`, `Fixnum`, and other object does not have `#scrub` method.
 
@@ -51,21 +51,29 @@ awesome_scrub(args) #=> args.scrub
 awesome_scrub!(args) #=> args.scrub!
 ```
 
-### Setup
+### Examples
 ```ruby
 class Foo
   include AwesomeScrub
+
+  def bar
+    awesome_scrub(any)
+  end
 end
 ```
 OR
 ```ruby
 class Foo
   extend AwesomeScrub
+
+  def bar
+    awesome_scrub(any)
+  end
 end
 ```
 OR
 ```ruby
-AwesomeScrub::awesome_scrub()
+AwesomeScrub::awesome_scrub(any)
 ```
 
 ## Installation
