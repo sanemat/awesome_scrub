@@ -39,6 +39,35 @@ name = params[:name].respond_to?(:scrub) ? params[:name].scrub : params[:name]
 @name = awesome_scrub(params[:name]).presence || 'noby'
 ```
 
+## Usage
+
+### Methods
+
+```ruby
+# call scrub
+awesome_scrub(args) #=> args.scrub
+
+# call scrub!
+awesome_scrub!(args) #=> args.scrub!
+```
+
+### Setup
+```ruby
+class Foo
+  include AwesomeScrub
+end
+```
+OR
+```ruby
+class Foo
+  extend AwesomeScrub
+end
+```
+OR
+```ruby
+AwesomeScrub::awesome_scrub()
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
