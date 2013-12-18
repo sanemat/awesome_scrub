@@ -7,6 +7,38 @@ Wrap `params[:name].respond_to?(:scrub) ? params[:name].scrub : params[:name]` t
 [![Build Status](https://api.travis-ci.org/sanemat/awesome_scrub.png?branch=master)](https://travis-ci.org/sanemat/awesome_scrub)
 [![Code Climate](https://codeclimate.com/github/sanemat/awesome_scrub.png)](https://codeclimate.com/github/sanemat/awesome_scrub)
 
+## Use case
+
+### Before:
+```ruby
+@name = params[:name].presence || 'nobody'
+```
+
+### After:
+```ruby
+@name = awesome_scrub(params[:name]).presence || 'noby'
+```
+
+## Point
+
+Almost time this is no problem, but params[:name] include `invalid byte sequence in UTF-8`, like `invalid_byte_sequence.presence` (`invalid_byte_sequence.present?`) raises `ArgumentError: invalid byte sequence in UTF-8`.
+
+This problem's solution is `String#scrub`(Feature of Ruby2.1, and string-scrub gem for Ruby2.0 backport), this replaces invalid characters. [Feature #6752: Replacing ill-formed subsequencce - ruby-trunk - Ruby Issue Tracking System](http://bugs.ruby-lang.org/issues/6752)
+
+This stil has problem for writing code, `params[:name]` is `String` or `nil`, and some case `Array`, `Fixnum`, and other object does not have `#scrub` method.
+
+### Work around
+
+```ruby
+name = params[:name].respond_to?(:scrub) ? params[:name].scrub : params[:name]
+@name = name.presence || 'nobody'
+```
+
+### Solution
+```ruby
+@name = awesome_scrub(params[:name]).presence || 'noby'
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
