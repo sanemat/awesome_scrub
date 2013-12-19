@@ -16,7 +16,7 @@ Wrap `params[:name].respond_to?(:scrub) ? params[:name].scrub : params[:name]` t
 
 ### After:
 ```ruby
-@name = awesome_scrub(params[:name]).presence || 'noby'
+@name = awesome_scrub(params[:name]).presence || 'nobody'
 ```
 
 ## Point
