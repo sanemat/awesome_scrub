@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require 'minitest/autorun'
 require_relative '../lib/awesome_scrub'
 
